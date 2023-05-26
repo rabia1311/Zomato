@@ -1,3 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+
+@mixin mobile {
+  @media screen and (max-width: 480px) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media screen and (min-width: 480px) and (max-width: 768px) {
+    @content;
+  }
+}
+@mixin laptop {
+  @media screen and (min-width: 1024px) {
+    @content;
+  }
+}
 
 .cta {
   width: 100%;
@@ -6,7 +23,14 @@
   display: flex;
   justify-content: center;
 
-  
+  @include mobile {
+    padding: 10px;
+    flex-direction: column;
+  }
+
+  @include tablet {
+    padding: 10px;
+  }
 
   .left {
     flex: 1;
@@ -15,7 +39,7 @@
     padding: 50px;
 
     img {
-      width: 80%;
+      width: 420px;
       object-fit: cover;
     }
   }
@@ -44,18 +68,19 @@
       display: flex;
       gap: 20px;
 
-      .radioButn {
+      .radioBtn {
         display: flex;
-        gap: 8px;
+        gap: 18px;
 
         input {
           width: 50px;
+          height: 50px;
           outline: lightcoral;
           cursor: pointer;
         }
 
         label {
-          font-size: 18px;
+          font-size: 24px;
           color: #222;
           font-weight: normal;
         }
@@ -65,9 +90,10 @@
     .input {
       display: flex;
       gap: 20px;
-     
+      
       input {
         min-width: 250px;
+        min-height: 70px;
         padding: 10px 14px;
         border: 1px solid lightgray;
         border-radius: 5px;
@@ -102,13 +128,17 @@
       display: flex;
       gap: 20px;
 
-     
+      @include mobile {
+        gap: 10px;
+      }
 
       img {
         width: 150px;
         cursor: pointer;
 
-       
+        @include mobile {
+          width: 120px;
+        }
       }
     }
   }
