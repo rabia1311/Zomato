@@ -4,6 +4,9 @@ import Card from './components/Card/Card';
 import Collection from './components/Collection/Collection';
 import Cities from './components/Cities/Cities';
 import CTA from "./components/CTA/CTA"
+import Footer from "./components/Footer/Footer"
+import AccContainer from './components/AccordianContainer/AccContainer';
+
 const App = () => {
   return (
    <div className="App">
@@ -12,6 +15,8 @@ const App = () => {
     <Collection/>
     <Cities/>
     <CTA/>
+    <AccContainer />
+  <Footer/>
    </div>
   )
 }
