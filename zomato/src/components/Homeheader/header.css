@@ -1,0 +1,11 @@
+.Header{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+}
+.hlogo{
+    height: 27px;
+    max-width: 140px;
+    margin-right: 24px;
+}
