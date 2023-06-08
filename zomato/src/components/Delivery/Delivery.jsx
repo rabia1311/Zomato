@@ -2,6 +2,7 @@ import React from 'react'
 import "../Delivery/Delivery.css"
 import Filter from "../Filter/filter"
 import Deliverycollection from './DeliveryCollection/Deliverycollection';
+import Topbrand from '../TopBrands/Topbrand';
 
 
 
@@ -43,7 +44,7 @@ const Delivery = () => {
 <Filter  filterlist={Deliveryfilter}/>
 </div>
      <Deliverycollection/>
-
+<Topbrand/>
     </div>
     
   
