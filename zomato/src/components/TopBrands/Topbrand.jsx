@@ -1,5 +1,19 @@
 import React from 'react'
 import "../TopBrands/topbrand.css"
+import NextArrow from '../Carausal/NextArrow';
+import PrevArrow from '../Carausal/PrevArrow';
+import { Slider } from '@mui/material';
+import Branditem from './Branditem';
+
+var settings = {
+    
+    infinite: false,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    nextArrow: <NextArrow/>,
+    prevArrow: <PrevArrow/>,
+  };
 const Topbrand = () => {
     const brandlist=[
         {
@@ -47,9 +61,20 @@ const Topbrand = () => {
     ]
 
 
-    
+   
+
+
   return (
-    <div> This is Topbrand</div>
+    <div className='topbrand max-width'> 
+    <div className="collection-title">Top brands for you </div>
+
+    <Slider {...settings}>
+    {brandlist.map((item) => (
+          <Branditem item={item} />
+        ))}
+
+            </Slider>
+    </div>
   )
 }
 
