@@ -11,7 +11,7 @@ const tabs=[
 
   {
     id:2,
-    name:"Dining-Out",
+    name:"DiningOut",
     active_img:"https://b.zmtcdn.com/data/o2_assets/30fa0a844f3ba82073e5f78c65c18b371616149662.png",
     backdrop:"#FCEEC0",
     inactive_img:"https://b.zmtcdn.com/data/o2_assets/855687dc64a5e06d737dae45b7f6a13b1616149818.png",
