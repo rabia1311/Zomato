@@ -3,6 +3,8 @@ import "../Delivery/Delivery.css"
 import Filter from "../Filter/filter"
 import Deliverycollection from './DeliveryCollection/Deliverycollection';
 import Topbrand from '../TopBrands/Topbrand';
+import Explore from '../Explore/Explore';
+import { restuarant } from '../../data/restuarant';
 
 
 
@@ -38,6 +40,8 @@ const Delivery = () => {
     },
    
   ];
+
+  const restuarantlist=restuarant;
   return (
     <div > 
 <div className="max-width">
@@ -45,6 +49,7 @@ const Delivery = () => {
 </div>
      <Deliverycollection/>
       <Topbrand/>
+      <Explore list={restuarantlist} collectionname='Delivery Restuarants in New Town, Kolkata'/>
     </div>
     
   
