@@ -44,7 +44,7 @@ const Delivery = () => {
 <Filter  filterlist={Deliveryfilter}/>
 </div>
      <Deliverycollection/>
-<Topbrand/>
+      <Topbrand/>
     </div>
     
   
