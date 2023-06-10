@@ -2,4 +2,6 @@
     padding: 16px 0px;
     display: flex;
     flex-wrap: wrap;
+    margin-left: 50px; /* Adjust the margin as per your requirement */
+    margin-right: 50px;
 }
