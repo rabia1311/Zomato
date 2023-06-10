@@ -36,12 +36,7 @@ const Collection = () => {
                 <span>7 places <KeyboardArrowRightIcon /></span>
                 
             </div>
-            <div className="collectionImg">
-                <img src={collection3} alt="collection1" />
-                <h3>Top 8 picturesque cafe's</h3>
-                <span>10 places <KeyboardArrowRightIcon /></span>
-                
-            </div>
+           
         </div>
     </div>
   )

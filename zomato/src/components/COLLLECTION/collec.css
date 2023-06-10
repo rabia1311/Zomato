@@ -1,0 +1,13 @@
+.collection-wrapper{
+    color:#f8f8f8;
+
+}
+.collection{
+   
+}
+.collection-subtitle-row{
+display: flex;
+justify-content: space-between;
+
+align-items: center;
+}
