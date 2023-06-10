@@ -48,6 +48,10 @@ const DiningOut = () => {
     },
   ];
 
+
+
+
+  
   return (
     <div>
       <Collection list={collectionlist} />
