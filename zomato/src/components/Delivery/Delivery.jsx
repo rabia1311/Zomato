@@ -5,6 +5,7 @@ import Deliverycollection from './DeliveryCollection/Deliverycollection';
 import Topbrand from '../TopBrands/Topbrand';
 import Explore from '../Explore/Explore';
 import { restuarant } from '../../data/restuarant';
+import Footer from '../Footer/Footer';
 
 
 
@@ -50,6 +51,7 @@ const Delivery = () => {
      <Deliverycollection/>
       <Topbrand/>
       <Explore list={restuarantlist} collectionname='Delivery Restuarants in New Town, Kolkata'/>
+      <Footer/>
     </div>
     
   
