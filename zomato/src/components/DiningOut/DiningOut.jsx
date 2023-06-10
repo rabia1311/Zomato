@@ -6,4 +6,4 @@ const DiningOut = () => {
   )
 }
 
-export default DiningOut
+export default DiningOut;
