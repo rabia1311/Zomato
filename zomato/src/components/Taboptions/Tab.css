@@ -19,7 +19,7 @@
     height:60px;
     width: 60px;
     border-radius: 50%;
-    background-color: #696969;
+    background-color: whitesmoke;
 }
 .tab-image{
     height: 30px;
@@ -29,4 +29,9 @@
 .active-tab{
     border-bottom: 2px solid var;
     color: red;
+}
+.tab-name{
+    margin-left: 10px;
+    font-weight: 500;
+    font-size: 20px;
 }
