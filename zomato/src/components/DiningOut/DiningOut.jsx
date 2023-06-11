@@ -1,6 +1,10 @@
 import React from 'react';
 import '../DiningOut/Dining.css';
 import Collection from '../Collection/Collection';
+import { Diningdata } from '../../data/Diningdata';
+import Filter from '../Filter/filter';
+import Explore from '../Explore/Explore';
+import Footer from '../Footer/Footer';
 
 const DiningOut = () => {
   const collectionlist = [
@@ -49,12 +53,47 @@ const DiningOut = () => {
   ];
 
 
+  const Diningfilter=[
 
+    {
+      id:1,
+      icon:<i className="fi fi-rr-settings-sliders absolute-center"></i>,
+      title:"Filters",
+
+    },
+    {
+      id:2,
+      title:"Rating : 4.0+",
+
+    },
+
+    {
+      id:3,
+      title:"Pure-Veg",
+     
+
+    },
+    {
+
+      id:4,
+      title:"Cuisine",
+      icon:<i className="fi fi-rr-apps-sort absolute-center"></i>,
+
+    },
+   
+  ];
+
+  const diningList=Diningdata;
 
   
   return (
     <div>
       <Collection list={collectionlist} />
+      <div className="max-width">
+        <Filter filterlist={Diningfilter}/>
+      </div>
+      <Explore list={diningList} collectionname='Best Dining Restuarants near you in Newtown Kolkata'/>
+      <Footer/>
     </div>
   );
 };
