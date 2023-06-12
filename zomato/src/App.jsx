@@ -9,6 +9,8 @@ import AccContainer from './components/AccordianContainer/AccContainer';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "../src/pages/Home"
 import Welcome from './pages/Welcome';
+import Nightlifepage from './pages/Nightlifepage';
+import Dining from './pages/Dining';
 const App = () => {
   return (
    <div className="App">
@@ -17,6 +19,10 @@ const App = () => {
         <Routes>
           <Route path="/home" element={<Home />} />
           <Route path="/" element={<Welcome />} />
+          <Route path="/night" element={<Nightlifepage />} />
+          <Route path="/dining" element={<Dining />} />
+
+
 
           
         </Routes>
