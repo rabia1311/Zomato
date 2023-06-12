@@ -9,21 +9,23 @@ const Card = () => {
    <div className="card">
     
     <div className="cardImg">
-    <Link to="/home">
+   <a href='/home'>
         <img src={Dine} alt="dine-img" />
-
+        </a>
         <h1>Order Online</h1>
         
         <span>Stay home and order to your doorstep</span>
-        </Link>
+        
     </div>
     <div className="cardImg">
-        <img src={Night} alt="night-img" />
+        <a href='/night'>
+        <img src={Night} alt="night-img" /></a>
         <h1>Nightlife and club's</h1>
         <span>Explore the city's top nightlife outlets</span>
     </div>
     <div className="cardImg">
-    <img src={Online} alt="online_img" />
+        <a href='/dining'>
+    <img src={Online} alt="online_img" /></a>
     <h1>Dinning</h1>
     <span>Views the city's favourite venues</span>
 </div>
