@@ -11,20 +11,29 @@ padding-top: 30px;
      border: 0.5px solid white;
 }
 .top-brand-img{
-    border-radius: inherit;
+    border-radius: 50%;
     height: 50%;
     width: 100%;
     object-fit: cover;
     width: 50%;
     padding: 40px 0px;
-
+ 
 }
 
   
   .collection-title {
     text-align: left;
-    margin-left: 30px;
+    margin-left: 45px;
   }
   
+
+
+  .collectop{
+    font-size: 30px;
+    color: #1c1c1c;
+    font-weight: 600;
+    margin-bottom: 32px;
+    margin-left: 20px;
+  }
   /* Add any additional styling for the slider, brand cover, and brand image */
  

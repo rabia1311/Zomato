@@ -99,6 +99,7 @@ const Nightlifepage = () => {
     <Filter filterlist={Nightfilter}/>
     </div>
     <Explore list={nightList} collectionname='Nightlife Restaurants in Newtown, Kolkata'/>
+    <Footer/>
   </div>
 
 

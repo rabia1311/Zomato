@@ -83,7 +83,7 @@ const deliveryitem=[
     <div className='deliverycollection'>
         <div className="max-width">
 
-            <div className='collection-title' > Eat What Makes You Happy </div>
+            <div className='collec' > Eat What Makes You Happy </div>
             <Slider {...settings}>
 {deliveryitem.map((item)=>{
     return <Deliveryitem item={item}/>

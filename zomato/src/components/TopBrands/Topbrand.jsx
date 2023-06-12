@@ -73,7 +73,7 @@ const Topbrand = () => {
     return (
         <div className='deliverycollection'>
           <div className='topbrand-container'>
-            <div className="collection-title">Top brands for you</div>
+            <div className="collectop">Top Brands For You</div>
             <div className='slider-container'>
             <Slider {...settings}>
               {brandlist.map((brand) => (

@@ -50,7 +50,8 @@ const Delivery = () => {
 </div>
      <Deliverycollection/>
       <Topbrand/>
-      <Explore list={restuarantlist} collectionname='Delivery Restuarants in New Town, Kolkata'/>
+      <div className='collectiontiltle'>
+      <Explore list={restuarantlist} collectionname='Delivery Restuarants in New Town, Kolkata'/></div>
       <Footer/>
     </div>
     
