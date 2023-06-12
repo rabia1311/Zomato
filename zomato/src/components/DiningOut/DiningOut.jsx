@@ -5,6 +5,7 @@ import { Diningdata } from '../../data/Diningdata';
 import Filter from '../Filter/filter';
 import Explore from '../Explore/Explore';
 import Footer from '../Footer/Footer';
+import "../Header/Header.scss"
 
 const DiningOut = () => {
   const collectionlist = [
