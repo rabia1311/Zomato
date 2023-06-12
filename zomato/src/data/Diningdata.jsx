@@ -77,7 +77,7 @@ export const Diningdata=[
             },
             "cuisine": [
                 {
-                    "deeplink": "zomato://search?deeplink_filters=WyJ7XCJjb250ZXh0XCI6XCJhbGxcIn0iLCJ7XCJjdWlzaW5lX2lkXCI6W1wiMzVcIl19Il0%3D",
+                    "deeplink": "://search?deeplink_filters=WyJ7XCJjb250ZXh0XCI6XCJhbGxcIn0iLCJ7XCJjdWlzaW5lX2lkXCI6W1wiMzVcIl19Il0%3D",
                     "url": "https://www.zomato.com/kolkata/restaurants/continental/",
                     "name": "Continental"
                 },

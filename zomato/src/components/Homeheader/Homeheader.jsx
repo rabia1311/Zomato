@@ -6,9 +6,9 @@ import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 const Homeheader = () => {
   return (
     <div className=".max Header"> 
-    
+    <a href='/'>
     <img src="https://b.zmtcdn.com/web_assets/b40b97e677bc7b2ca77c58c61db266fe1603954218.png" alt='logo' className='hlogo'></img>
-
+    </a>
     <div className="header_right">
       <div className="header_search">
         <div className="location_wrapper">
