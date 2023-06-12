@@ -69,15 +69,22 @@ const DiningOut = () => {
 
     {
       id:3,
-      title:"Pure-Veg",
+      title:"Outdoor Seating",
      
 
     },
     {
 
       id:4,
-      title:"Cuisine",
-      icon:<i className="fi fi-rr-apps-sort absolute-center"></i>,
+      title:"Serves Alcohol",
+      
+
+    },
+    {
+
+      id:5,
+      title:"Open Now",
+      
 
     },
    

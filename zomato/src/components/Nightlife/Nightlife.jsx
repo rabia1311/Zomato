@@ -10,7 +10,7 @@ const Nightlife = () => {
       id: 1,
       title: '10 Blissful breakfast places',
       cover:
-        'https://b.zmtcdn.com/data/collections/43d0572e2bcdcefbc2cc9f6a86be05a8_1683054191.jpg',
+        'https://b.zmtcdn.com/data/collections/038023025a7859881a3fa3b3b1c93416_1675231457.jpg',
       places: '10 places',
     },
     {
@@ -67,14 +67,14 @@ const Nightlife = () => {
 
     {
       id:3,
-      title:"Pure-Veg",
+      title:"Distance",
      
 
     },
     {
 
       id:4,
-      title:"Cuisine",
+      title:"Pubs and Bars ",
       icon:<i className="fi fi-rr-apps-sort absolute-center"></i>,
 
     },
