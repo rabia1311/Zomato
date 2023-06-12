@@ -6,6 +6,7 @@ import { Nightlifedata } from '../data/Nightlifedata';
 import Filter from '../components/Filter/filter';
 import Homeheader from '../components/Homeheader/Homeheader';
 import Tab from '../components/Taboptions/tab';
+import Footer from '../components/Footer/Footer';
 const Nightlifepage = () => {
 
     const collectionlist = [
@@ -89,21 +90,19 @@ const Nightlifepage = () => {
 
 
   return (
-   
     <div> 
 
-  <Homeheader/>
-  <Tab/>
-    <Collection list={collectionlist} />
-    <div className="max-width">
-    <Filter filterlist={Nightfilter}/>
+<Homeheader/>
+<Tab/>
+      <Collection list={collectionlist} />
+      <div className="max-width">
+      <Filter filterlist={Nightfilter}/>
+      </div>
+      <Explore list={nightList} collectionname='Nightlife Restaurants in Newtown, Kolkata'/>
+      <Footer/>
     </div>
-    <Explore list={nightList} collectionname='Nightlife Restaurants in Newtown, Kolkata'/>
-    <Footer/>
-  </div>
-
-
   )
+  
 }
 
 export default Nightlifepage;
