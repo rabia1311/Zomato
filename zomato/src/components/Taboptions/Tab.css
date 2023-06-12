@@ -3,6 +3,7 @@
 }
 .options-wrapper{
     display: flex;
+    padding: 30px 123px;
 
 }
 .tab-item{
@@ -11,7 +12,8 @@
 }
 .tab-name{
     font-size: 20px;
-    font-weight: 600;
+    font-weight: 900;
+    font-weight: bolder;
     margin-left: 10px;
     color: #696969;
 }
@@ -29,8 +31,11 @@
 }
 
 .active-tab{
-    border-bottom: 2px solid var;
-    color: red;
+    border-bottom: 2px solid red;
+  
+}
+.active-tab .tab-name{
+    color:#EF4F5F;
 }
 .tab-name{
     margin-left: 10px;
