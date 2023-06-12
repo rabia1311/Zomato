@@ -1,4 +1,5 @@
 import React from 'react'
+import "../Delivery/DeliveryCollection/Deliverycollec.css"
 import "../TopBrands/topbrand.css"
 import NextArrow from '../Carausal/NextArrow';
 import PrevArrow from '../Carausal/PrevArrow';
@@ -70,7 +71,7 @@ const Topbrand = () => {
 
 
     return (
-        <div className='topbrand-wrapper'>
+        <div className='deliverycollection'>
           <div className='topbrand-container'>
             <div className="collection-title">Top brands for you</div>
             <div className='slider-container'>
