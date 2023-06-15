@@ -1,15 +1,16 @@
 const mongoose= require('mongoose')
-const mongoURI='mongodb+srv://RabiaZomato:zomato@cluster0.kh5ettk.mongodb.net/'
+const mongoURI='mongodb+srv://RabiaZomato:zomato@cluster0.kh5ettk.mongodb.net/gofoodmern?'
 
-const mongoDB=()=>{
-    mongoose.connect('mongodb+srv://RabiaZomato:zomato@cluster0.kh5ettk.mongodb.net/', { useNewUrlParser: true, useUnifiedTopology: true })
-    .then(() => {
+const mongoDB = async () => {
+    try {
+      await mongoose.connect(mongoURI, { useNewUrlParser: true });
       console.log('Connected to MongoDB');
-      
-    })
-    .catch((error) => {
+  
+      const fetchedData = await mongoose.connection.db.collection("sample").find({}).toArray();
+      console.log(fetchedData);
+    } catch (error) {
       console.error('Error connecting to MongoDB:', error);
-    });
-    
-}
-module.exports=mongoDB;
+    } 
+  };
+  
+  module.exports = mongoDB;
