@@ -25,7 +25,11 @@ span{
     display: flex;
     justify-content: center;
     gap: 10px;
-
+    .link {
+        color:white; /* Set the desired color for the links */
+        text-decoration: underline; /* Add underline to the links */
+        margin-right: 10px; /* Adjust the margin if needed */
+      }
     span{
 color: white;
 font-size: 22px;
