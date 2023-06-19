@@ -11,6 +11,7 @@ import Home from "../src/pages/Home"
 import Welcome from './pages/Welcome';
 import Nightlifepage from './pages/Nightlifepage';
 import Dining from './pages/Dining';
+import Signup from '../src/pages/Signup';
 const App = () => {
   return (
    <div className="App">
@@ -21,6 +22,7 @@ const App = () => {
           <Route path="/" element={<Welcome />} />
           <Route path="/night" element={<Nightlifepage />} />
           <Route path="/dining" element={<Dining />} />
+          <Route path="/signup" element={<Signup />} />
 
 
 
