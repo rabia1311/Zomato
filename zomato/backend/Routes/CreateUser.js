@@ -21,7 +21,7 @@ try {
         email:req.body.email,
         location:req.body.location,
     })
-    res.json({success:true})
+    res.json({success:true, message: "Registered successfully"})
 } 
 
 
@@ -53,7 +53,7 @@ if (req.body.password !== userData.password){
     return res.status(400).json({errors:" try logging in with correct credentials"})
 
 }
-    res.json({success:true})
+    res.json({success:true ,  message: "Login successful"})
 } 
 
 

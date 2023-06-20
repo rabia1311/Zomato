@@ -1,5 +1,7 @@
 import React from 'react'
 import { useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import "../pages/signup.css";
 import { Link,useNavigate } from 'react-router-dom';
 const Login = () => {
@@ -19,11 +21,13 @@ const Login = () => {
       const json =  await response.json();
       console.log(json);
       if (!json.success) {
-        alert("Enter Valid Credentials");
+        toast.error("Enter valid credentials");
       }
 
       if(json.success){
+        toast.success("Login Successfully");
         navigate("/");
+        
       }
     };
   
@@ -56,6 +60,7 @@ const Login = () => {
           <button type="submit" className="m-3 btn btn-success">Submit</button>
           <Link to="/signup" className='m-3 btn btn-danger'> I am a new  User</Link>
         </form>
+        <ToastContainer/>
       </div>
     </div>
     </>

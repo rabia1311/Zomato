@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import "../pages/signup.css";
 import { Link } from 'react-router-dom';
 
@@ -15,10 +17,13 @@ const Signup = () => {
       body: JSON.stringify({ name: credentials.name, email: credentials.email, password: credentials.password, location: credentials.geolocation })
     });
 
-    const json = response.json();
+    const json = await response.json(); // Await the response.json() method
+
     console.log(json);
     if (!json.success) {
-      alert("Enter Valid Credentials");
+      toast.error("Enter valid credentials");
+    } else {
+      toast.success("Registered successfully");
     }
   };
 
@@ -28,41 +33,41 @@ const Signup = () => {
 
   return (
     <>
-    <div className="container">
-      
-      <div className="form-wrapper">
-      <h2 className="signup-heading">SIGN UP HERE</h2>
-        <form onSubmit={handleSubmit}>
-          <div className="form-group">
-            <label htmlFor="name" className="form-label">
-              Name
-            </label>
-            <input type="text" className="form-control" id="name" name='name' value={credentials.name} onChange={onChange} />
-          </div>
-          <div className="form-group">
-            <label htmlFor="email" className="form-label">
-              Email address
-            </label>
-            <input type="email" className="form-control" id="email" name='email' value={credentials.email} onChange={onChange} />
-          </div>
-          <div className="form-group">
-            <label htmlFor="password" className="form-label">
-              Password
-            </label>
-            <input type="password" className="form-control" id="password" name='password' value={credentials.password} onChange={onChange} />
-          </div>
-          <div className="form-group">
-            <label htmlFor="geolocation" className="form-label">
-              Location
-            </label>
-            <input type="text" className="form-control" id="geolocation" name='geolocation' value={credentials.geolocation} onChange={onChange} />
-          </div>
+      <div className="container">
+        <div className="form-wrapper">
+          <h2 className="signup-heading">SIGN UP HERE</h2>
+          <form onSubmit={handleSubmit}>
+            <div className="form-group">
+              <label htmlFor="name" className="form-label">
+                Name
+              </label>
+              <input type="text" className="form-control" id="name" name='name' value={credentials.name} onChange={onChange} />
+            </div>
+            <div className="form-group">
+              <label htmlFor="email" className="form-label">
+                Email address
+              </label>
+              <input type="email" className="form-control" id="email" name='email' value={credentials.email} onChange={onChange} />
+            </div>
+            <div className="form-group">
+              <label htmlFor="password" className="form-label">
+                Password
+              </label>
+              <input type="password" className="form-control" id="password" name='password' value={credentials.password} onChange={onChange} />
+            </div>
+            <div className="form-group">
+              <label htmlFor="geolocation" className="form-label">
+                Location
+              </label>
+              <input type="text" className="form-control" id="geolocation" name='geolocation' value={credentials.geolocation} onChange={onChange} />
+            </div>
 
-          <button type="submit" className="m-3 btn btn-success">Submit</button>
-          <Link to="/login" className='m-3 btn btn-danger'>Already a User</Link>
-        </form>
+            <button type="submit" className="m-3 btn btn-success">Submit</button>
+            <Link to="/login" className='m-3 btn btn-danger'>Already a User</Link>
+          </form>
+          <ToastContainer />
+        </div>
       </div>
-    </div>
     </>
   );
 };
