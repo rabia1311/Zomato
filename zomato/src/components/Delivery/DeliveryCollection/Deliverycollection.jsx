@@ -36,8 +36,11 @@ const Deliverycollection = () => {
             {category.CategoryName}
             {category.CategoryType}
             {category.Description}
-            {category.image}
-          
+            <img
+                    src={`http://localhost:8000/category/${category.image}`}
+                    alt="Category"
+                    className="image-thumbnail"
+                  />
           
           
           </li>
