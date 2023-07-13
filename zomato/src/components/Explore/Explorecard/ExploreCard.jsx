@@ -5,7 +5,7 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-
+import "../Explorecard/exploreCard.css"
 const ExploreCard = () => {
   const [restaurants, setRestaurants] = useState([]);
 
@@ -28,31 +28,29 @@ const ExploreCard = () => {
   return (
     <>
       {restaurants.map((restaurant) => (
-        <Card  className="carddesign" key={restaurant.id} sx={{ maxWidth: 345 }}>
-        <CardMedia
+        <Card  className="explore-card" key={restaurant.id} sx={{ maxWidth: 345 }}>
+        <CardMedia className='explore-card-image'
             component="img"
             alt="Restaurant Picture"
             height="140"
             image={`http://localhost:8000/uploads/${restaurant.image}`}
             title={restaurant.Restaurant_name}
           />
-          <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
+          <CardContent className=''>
+            <Typography  gutterBottom variant="h5" component="div">
               {restaurant.Restaurant_name}
             </Typography>
             <Typography variant="body2" color="text.secondary">
               {restaurant.Description}
             </Typography>
-            <Typography variant="body2" color="text.secondary">
+            <Typography  variant="body2" color="text.secondary">
               Delivery Time: {restaurant.DeliveryTime}
             </Typography>
             <Typography variant="body2" color="text.secondary">
               Address: {restaurant.Restaurant_Address}
             </Typography>
           </CardContent>
-          <CardActions>
-            <Button size="small"> See More</Button>
-          </CardActions>
+         
         </Card>
       ))}
     </>
