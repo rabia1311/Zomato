@@ -5,8 +5,12 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import "../Explorecard/exploreCard.css"
+import '../Explorecard/exploreCard.css';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
+
 const ExploreCard = () => {
+  const navigate = useNavigate();
   const [restaurants, setRestaurants] = useState([]);
 
   useEffect(() => {
@@ -25,32 +29,57 @@ const ExploreCard = () => {
       });
   };
 
+  const handleRestaurantClick = (restaurantName) => {
+    axios
+      .get("http://localhost:8000/admin/subcategory", {
+        params: {
+          Restaurantname: restaurantName,
+        },
+      })
+      .then((response) => {
+        const { data } = response;
+        const subcategories = data.filter(
+          (subcat) => subcat.Restaurantname === restaurantName
+        );
+        console.log("Subcategory details:", subcategories);
+        navigate("/menu", { state: { subcategories } });
+      })
+      .catch((error) => {
+        console.log("Error fetching subcategory details:", error);
+      });
+  };
+
   return (
     <>
       {restaurants.map((restaurant) => (
-        <Card  className="explore-card" key={restaurant.id} sx={{ maxWidth: 345 }}>
-        <CardMedia className='explore-card-image'
+        <Card
+          oncclassName="explore-card"
+          key={restaurant.id}
+          sx={{ maxWidth: 345 }}
+         
+        >
+          <CardMedia
+            className="explore-card-image"
             component="img"
             alt="Restaurant Picture"
             height="140"
             image={`http://localhost:8000/uploads/${restaurant.image}`}
             title={restaurant.Restaurant_name}
           />
-          <CardContent className=''>
-            <Typography  gutterBottom variant="h5" component="div">
+          <CardContent className="">
+            <Typography gutterBottom variant="h5" component="div" onClick={() => handleRestaurantClick(restaurant.Restaurant_name)}>
               {restaurant.Restaurant_name}
             </Typography>
             <Typography variant="body2" color="text.secondary">
               {restaurant.Description}
             </Typography>
-            <Typography  variant="body2" color="text.secondary">
+            <Typography variant="body2" color="text.secondary">
               Delivery Time: {restaurant.DeliveryTime}
             </Typography>
             <Typography variant="body2" color="text.secondary">
               Address: {restaurant.Restaurant_Address}
             </Typography>
           </CardContent>
-         
         </Card>
       ))}
     </>
