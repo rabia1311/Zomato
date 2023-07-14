@@ -4,36 +4,53 @@ import Tab from '../components/Taboptions/tab';
 import Footer from '../components/Footer/Footer';
 import Filter from '../components/Filter/filter';
 import Homeheader from '../components/Homeheader/Homeheader';
-import { restuarant } from "../data/restuarant";
-import  "../pages/Menu.css"
+import "../pages/Menu.css";
 
 const Menu = () => {
   const location = useLocation();
-  const { subcategories } = location.state || [];
+  const { subcategories, restaurants } = location.state || {};
 
   return (
     <div>
       <Homeheader />
       <Tab />
       <Filter />
-      
-      <div className="subcategory-container">
-        {subcategories.map((subcategory) => (
-          <div key={subcategory._id} className="subcategory-item">
-             <h1> {subcategory.Restaurantname}</h1>
-            <div className="horizontal-card">
-              
-              <div className="card-details">
-               
-                <h4>Item Name: {subcategory.Itemname}</h4>
-                <img
-                  src={`http://localhost:8000/subcategoryimg/${subcategory.image}`}
-                  alt="Category"
-                  className="item-image"
-                />
-                <h4>Category: {subcategory.Itemcategory}</h4>
-                <h4>Price: {subcategory.Itemprice}</h4>
-              </div>
+      <h1></h1>
+      <div className="restaurant-container">
+        {restaurants.map((restaurant) => (
+          <div key={restaurant.id} className="restaurant-item">
+            <h2>{restaurant.Restaurant_name}</h2>
+            <img
+              src={`http://localhost:8000/uploads/${restaurant.image}`}
+              alt="Restaurant Picture"
+              className="restaurant-image"
+            />
+            <p>Description: {restaurant.Description}</p>
+            <p>Delivery Time: {restaurant.DeliveryTime}</p>
+            <p>Address: {restaurant.Restaurant_Address}</p>
+            <div className="items-container">
+              {subcategories
+                .filter(
+                  (subcategory) =>
+                    subcategory.Restaurantname === restaurant.Restaurant_name
+                )
+                .map((subcategory) => (
+                  <div
+                    key={subcategory._id}
+                    className="item-item"
+                  >
+                    <div className="item-details">
+                      <h4>Item Name: {subcategory.Itemname}</h4>
+                      <img
+                        src={`http://localhost:8000/subcategoryimg/${subcategory.image}`}
+                        alt="Item"
+                        className="item-image"
+                      />
+                      <h4>Category: {subcategory.Itemcategory}</h4>
+                      <h4>Price: {subcategory.Itemprice}</h4>
+                    </div>
+                  </div>
+                ))}
             </div>
           </div>
         ))}
@@ -41,7 +58,6 @@ const Menu = () => {
       <Footer />
     </div>
   );
-  
 };
 
 export default Menu;

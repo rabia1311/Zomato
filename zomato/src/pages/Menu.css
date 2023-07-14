@@ -5,9 +5,14 @@
   
   .subcategory-item {
     width: 400px;
+    background-color:whitesmoke;
     margin: 10px;
-  }
+    transition: transform 0.3s ease;
   
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
   .horizontal-card {
     display: flex;
     align-items: center;

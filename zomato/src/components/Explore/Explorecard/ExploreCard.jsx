@@ -36,13 +36,26 @@ const ExploreCard = () => {
           Restaurantname: restaurantName,
         },
       })
-      .then((response) => {
-        const { data } = response;
-        const subcategories = data.filter(
+      .then((subcategoryResponse) => {
+        const subcategories = subcategoryResponse.data.filter(
           (subcat) => subcat.Restaurantname === restaurantName
         );
-        console.log("Subcategory details:", subcategories);
-        navigate("/menu", { state: { subcategories } });
+
+        axios
+          .get("http://localhost:8000/admin/restaurant/")
+          .then((restaurantResponse) => {
+            const restaurants = restaurantResponse.data.filter(
+              (restaurant) => restaurant.Restaurant_name === restaurantName
+            );
+
+            console.log("Subcategory details:", subcategories);
+            console.log("Restaurant details:", restaurants);
+
+            navigate("/menu", { state: { subcategories, restaurants } });
+          })
+          .catch((error) => {
+            console.log("Error fetching restaurant details:", error);
+          });
       })
       .catch((error) => {
         console.log("Error fetching subcategory details:", error);
@@ -56,7 +69,6 @@ const ExploreCard = () => {
           oncclassName="explore-card"
           key={restaurant.id}
           sx={{ maxWidth: 345 }}
-         
         >
           <CardMedia
             className="explore-card-image"
