@@ -13,21 +13,19 @@ const Menu = () => {
   return (
     <div>
       <Homeheader />
-      <Tab />
-      <Filter />
+      
       <h1></h1>
       <div className="restaurant-container">
         {restaurants.map((restaurant) => (
           <div key={restaurant.id} className="restaurant-item">
-            <h2>{restaurant.Restaurant_name}</h2>
+            
             <img
               src={`http://localhost:8000/uploads/${restaurant.image}`}
               alt="Restaurant Picture"
               className="restaurant-image"
             />
-            <p>Description: {restaurant.Description}</p>
-            <p>Delivery Time: {restaurant.DeliveryTime}</p>
-            <p>Address: {restaurant.Restaurant_Address}</p>
+            <h2 className="name">{restaurant.Restaurant_name}</h2>
+            <p> {restaurant.Description}</p>
             <div className="items-container">
               {subcategories
                 .filter(
